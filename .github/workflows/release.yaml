@@ -1,0 +1,42 @@
+name: Create Release
+
+on:
+  push:
+    branches:
+      - "main"
+
+permissions:
+  contents: read
+
+jobs:
+  release:
+    name: Create release
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Extract release notes
+        id: extract-release-notes
+        uses: ffurrer2/extract-release-notes@v1
+        with:
+          changelog_file: CHANGELOG.md
+      - name: Retrieve information from package.json
+        uses: myrotvorets/info-from-package-json-action@1.0.0
+        id: package-json
+      - name: Get Previous tag
+        id: previous-tag
+        uses: "WyriHaximus/github-action-get-previous-tag@v1"
+        with:
+          fallback: 1.0.0
+      - name: Create dist folder
+        run: mkdir dist
+      - name: Build artifacts
+        uses: lannonbr/vsce-action@3.0.0
+        with:
+          args: "package -o ./dist/sbotics-reduc-${{ steps.package-json.outputs.packageVersion }}.vsix"
+      - name: Create release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh release create v${{ steps.package-json.outputs.packageVersion }} ./dist/*.vsix --notes '${{ steps.extract-release-notes.outputs.release_notes }}\n\n**Changelog completa:** https://github.com/luisin13/sbotics-vscode/compare/${{steps.previous-tag.outputs.tag}}...v${{ steps.package-json.outputs.packageVersion }}' --title ${{ steps.package-json.outputs.packageVersion }}

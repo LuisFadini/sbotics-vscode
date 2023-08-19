@@ -1,8 +1,21 @@
 {
   "name": "sbotics-reduc-support",
   "displayName": "sBotics rEduc Support",
-  "description": "Adiciona suporte a linguagem rEduc do simulador sBotics",
-  "version": "0.0.1",
+  "description": "Suporte a linguagem rEduc do simulador sBotics",
+  "version": "1.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Luisin13/sbotics-vscode"
+  },
+  "author": {
+    "name": "Luís Otávio",
+    "url": "https://github.com/Luisin13"
+  },
+  "bugs": {
+    "url": "https://github.com/Luisin13/sbotics-vscode/issues"
+  },
+  "publisher": "Luís Otávio",
+  "icon": "./icons/rEduc.png",
   "engines": {
     "vscode": "^1.71.0"
   },
