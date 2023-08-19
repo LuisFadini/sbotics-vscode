@@ -15,7 +15,7 @@
     "url": "https://github.com/Luisin13/sbotics-vscode/issues"
   },
   "publisher": "Luís Otávio",
-  "icon": "./icons/rEduc.png",
+  "icon": "icons/rEduc.png",
   "engines": {
     "vscode": "^1.71.0"
   },
