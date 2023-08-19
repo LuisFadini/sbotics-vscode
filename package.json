@@ -1,0 +1,52 @@
+{
+  "name": "sbotics-reduc-support",
+  "displayName": "sBotics rEduc Support",
+  "description": "Adiciona suporte a linguagem rEduc do simulador sBotics",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.71.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Snippets",
+    "Other"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "sboticsR",
+        "aliases": [
+          "rEduc",
+          "sboticsR"
+        ],
+        "extensions": [
+          ".re"
+        ],
+        "configuration": "./language-configuration.json",
+        "icon": {
+          "dark": "./icons/rEduc.png",
+          "light": "./icons/rEduc.png"
+        },
+        "filenamePatterns": [
+          "*.re"
+        ]
+      }
+    ],
+    "grammars": [
+      {
+        "language": "sboticsR",
+        "scopeName": "source.sboticsR",
+        "path": "./syntaxes/sboticsR.tmLanguage.json"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "sboticsR",
+        "path": "./snippets/snippets.json"
+      }
+    ]
+  },
+  "devDependencies": {
+    "esbuild": "^0.15.10"
+  }
+}

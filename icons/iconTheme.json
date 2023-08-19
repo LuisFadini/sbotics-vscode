@@ -1,0 +1,10 @@
+{
+  "iconDefinitions": {
+    "_re_file": {
+      "iconPath": "./icons/rEduc.svg"
+    }
+  },
+  "languageIds": {
+    "rEduc": "_re_file"
+  }
+}

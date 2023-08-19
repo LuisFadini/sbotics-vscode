@@ -1,0 +1,106 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "rEduc",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#operators"
+		},
+		{
+			"include": "#variables"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [
+				{
+					"name": "keyword.control.sboticsR",
+					"match": "\\b(se|para|teste|enquanto|para|entao|senao|caso|farei|repita|vezes|outros|e|ou|com|inicio|fim)\\b"
+				},
+				{
+					"name": "support.function.builtin",
+					"match": "\\b(DesligarLuz|LigarLuz|Colorido|Cor|CorVermelho|CorVerde|CorAzul|Luminosidade|Luz|Bussola|Direcao|Inclinacao|Velocidade|Toque|TemAlgo|Ultra|Ultrassonico|UltraVeAlgo|Interromper|AnguloMotor|ForcaMotor|VelocidadeAlvoMotor|VelocidadeMotor|Arredondar|DefinirMotor|Limitar|Motor|TravarMotor|Aleatorio|VirarBooleano|VirarNumero|Mapeamento|Modulo|Pi|RaizQuadrada|Resto|ArcoCosseno|ArcoSeno|ArcoTangente|Cosseno|Seno|Tangente|EstaTocando|PararSom|TocarFrequencia|TocarNota|CarimboHora|CarimboMilissegundo|Esperar|Pausa|CarimbarMensagens|Concatenar|VirarTexto|AbrirConsole|Escrever|EscreverLinha|LimparConsole|LimparRegistro|Registrar|RegistrarLinha)\\b(?=\\()"
+				},
+				{
+					"name": "constant.language.boolean",
+					"match": "\\b(verdadeiro|falso)\\b"
+				}
+			]
+		},
+		"comments": {
+			"name": "comment.line.number-sign",
+			"begin": "#",
+			"end": "\n"
+		},
+		"strings": {
+			"name": "string.quoted.double.sboticsR",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.sboticsR",
+					"match": "\\\\."
+				}
+			]
+		},
+		"operators": {
+			"patterns": [
+				{
+					"name": "keyword.operator.comparison",
+					"match": "(==|!=|<=|>=|<(?!<)|>(?!>))"
+				},
+				{
+					"name": "constant.numeric",
+					"match": "([0-9]+)"
+				},
+				{
+					"name": "keyword.operator.assignment",
+					"match": "(=)"
+				},
+				{
+					"name": "keyword.operator.decrement",
+					"match": "\\-\\-"
+				},
+				{
+					"name": "keyword.operator.increment",
+					"match": "\\+\\+"
+				}
+			]
+		},
+		"variables": {
+			"patterns": [
+				{
+					"match": "\\b(texto|numero|booleano)\\s+([a-zA-Z][a-zA-Z0-9_]*)\\b",
+					"captures": {
+						"1": {
+							"name": "keyword.control"
+						},
+						"2": {
+							"name": "variable.parameter"
+						}
+					}
+				},
+				{
+					"match": "\\b(tarefa)\\s+([a-zA-Z][a-zA-Z0-9_]*)\\b",
+					"captures": {
+						"1": {
+							"name": "storage.type.function.js"
+						},
+						"2": {
+							"name": "entity.name.function"
+						}
+					}
+				}
+			]
+		}
+	},
+	"scopeName": "source.sboticsR"
+}

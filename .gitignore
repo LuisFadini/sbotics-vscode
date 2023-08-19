@@ -1,0 +1,5 @@
+node_modules
+*.vsix
+tslint.json
+tsconfig.json
+package-lock.json

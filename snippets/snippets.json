@@ -1,0 +1,57 @@
+{
+  "Cor": {
+    "scope": "sboticsR",
+    "prefix": "cor",
+    "body": "Cor(\"${1:sensor}\") == \"${2:cor}\""
+  },
+  "Toque": {
+    "scope": "sboticsR",
+    "prefix": "toque",
+    "body": "Toque(\"${1:sensor}\") == \"${2:cor}\""
+  },
+  "Ultra": {
+    "scope": "sboticsR",
+    "prefix": "ultra",
+    "body": "Ultra(\"${1:sensor}\") == ${2:distancia}"
+  },
+  "TemAlgo e Ultra": {
+    "scope": "sboticsR",
+    "prefix": "tultra",
+    "body": "TemAlgo(\"${1:sensor}\") e Ultra(\"${2:sensor}\") == ${3:distancia}"
+  },
+  "Motor": {
+    "scope": "sboticsR",
+    "prefix": "motor",
+    "body": "Motor(\"${1:motor}\", ${2:velocidade})"
+  },
+  "Definir Motor": {
+    "scope": "sboticsR",
+    "prefix": "dmotor",
+    "body": "DefinirMotor(\"${1:motor}\", ${2:força}, ${3:velocidade})"
+  },
+  "Se": {
+    "scope": "sboticsR",
+    "prefix": "se",
+    "body": "se (${1:condição}) entao {\n  ${2}\n}"
+  },
+  "Se Senão": {
+    "scope": "sboticsR",
+    "prefix": "sen",
+    "body": "se (${1:condição}) entao {\n  ${2}\n} senao {\n  ${3}\n}"
+  },
+  "Enquanto": {
+    "scope": "sboticsR",
+    "prefix": "enquanto",
+    "body": "enquanto (${1:condição}) farei {\n  ${2}\n}"
+  },
+  "Loop infinito": {
+    "scope": "sboticsR",
+    "prefix": "loop",
+    "body": "enquanto (verdadeiro) farei {\n  ${1}\n}"
+  },
+  "Inicio": {
+    "scope": "sboticsR",
+    "prefix": "inicio",
+    "body": "inicio\n  ${1}\nfim"
+  }
+}
